@@ -1,8 +1,8 @@
 import React from "react"
 import {Link} from "react-router"
-export default class Index extends React.Component{
+export default class Start extends React.Component{
   render(){
-    return <div>
+    return <div className="page page-start">
       <div className="logo">
         Legend
       </div>
@@ -12,7 +12,9 @@ export default class Index extends React.Component{
             +
           </Link>
         </div>
-        <Link to="/timeline" className="skip">
+      </div>
+      <div className="skip">
+        <Link to="/bar">
           みんなのLegendを見る
         </Link>
       </div>

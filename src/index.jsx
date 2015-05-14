@@ -7,5 +7,5 @@ console.info("Start")
 var container = document.body;
 router(container)
 
-insertCss(require("normalize.css"))
+insertCss(require("normalize-css"))
 insertCss(require("./style/main.styl"))
