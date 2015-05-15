@@ -1,18 +1,18 @@
 
 body
-  background: #ccc;
+  background: #f4f4f1;
   box-sizing: border-box;
   color: #333;
 
 a
-  color: #ccc;
+  color: #000;
   -webkit-tap-highlight-color:rgba(0,0,0,0);
 .page
   padding: 1em;
 .page-start
   .logo
     font-size: 48px;
-    color: #ccc;
+    color: #f4f4f1;
     text-align: center;
 
   .start-button-container
@@ -79,26 +79,65 @@ a
       $mshadow $shadow #fff,
       $shadow $mshadow #fff,
       $mshadow $mshadow #fff
-.qa-card
-  padding: 10px
-.qa-question
-  .avater
+  .qa-card
+    padding: 20px 10px
+  .qa-question
+    .avater
+      vertical-align:middle
+
+  .qa-item
+    display: inline-block
+    padding-left: 10px
     vertical-align:middle
+    width: 200px
+  .querist-hat
+    font-size: 10px
 
-.qa-item
-  display: inline-block
-  padding-left: 10px
-  vertical-align:middle
-  width: 200px
-.querist-hat
-  font-size: 10px
+  .qa-answer
+    font-size:30px;
+    font-weight:bold
+  .avater
+    border: 3px solid black;
+    $size= 80px
+    width: $size;
+    height: $size;
+    border-radius: ($size)
 
-.qa-answer
-  font-size:30px;
-  font-weight:bold
-.avater
-  border: 3px solid black;
-  $size= 80px
-  max-width: $size;
-  max-height: $size;
-  border-radius: ($size)
+  .answer-form
+    margin-top: 20px
+    $size = 80px
+    .answer-text
+      text-align: center;
+      font-size: 12px;
+    .textarea-demi
+      border: 3px solid black;
+      width: 100%;
+      padding-bottom: ($size/2)+10
+      background: white
+      textarea
+        resize: none;
+        width: 100%;
+        font-size: 32px;
+        border: none;
+        height: 1.5em;
+
+    .doyakun
+      text-align: center;
+      background: #ffc600;
+      width: $size;
+      height: $size;
+      border-radius: $size;
+      z-index: 10
+      margin: -($size/2) auto 0
+      vertical-align:middle
+      box-shadow: 0px 8px #000
+      &:active
+        opacity: 0.8
+      img
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width:60%;
+  .answer-skip
+    text-align:right
+    a
+      color: #666
