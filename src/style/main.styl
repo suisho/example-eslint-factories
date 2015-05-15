@@ -1,8 +1,8 @@
 
 body
-  background: #333;
+  background: #ccc;
   box-sizing: border-box;
-  color: #ccc;
+  color: #333;
 
 a
   color: #ccc;
@@ -59,3 +59,46 @@ a
       background: #6e60d8;
     .mesu
       background: #d88ccf;
+
+.page-doja
+  .user-hat
+    font-size: 12px;
+  .user-header
+    $shadow= 2px
+    $mshadow= -2px
+    padding: 1em;
+    background: #ffc600;
+    font-weight: bold;
+    font-size: 22px;
+    border-bottom: 3px solid black;
+    text-shadow: $shadow 0 #fff,
+      $mshadow 0 #fff,
+      0 $mshadow #fff,
+      0 $shadow #fff,
+      $shadow $shadow #fff,
+      $mshadow $shadow #fff,
+      $shadow $mshadow #fff,
+      $mshadow $mshadow #fff
+.qa-card
+  padding: 10px
+.qa-question
+  .avater
+    vertical-align:middle
+
+.qa-item
+  display: inline-block
+  padding-left: 10px
+  vertical-align:middle
+  width: 200px
+.querist-hat
+  font-size: 10px
+
+.qa-answer
+  font-size:30px;
+  font-weight:bold
+.avater
+  border: 3px solid black;
+  $size= 80px
+  max-width: $size;
+  max-height: $size;
+  border-radius: ($size)
