@@ -94,7 +94,7 @@ class AnswerForm{
           <textarea ref="answerText"></textarea>
         </div>
           <div className="doyakun" onClick={this.sendAnswer.bind(this)}>
-            <img src="./img/doyakun.png"/>
+            <img src="./images/doyakun.png"/>
             <div className="answer-text">
               こたえる
             </div>
