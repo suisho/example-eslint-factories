@@ -141,3 +141,40 @@ a
     text-align:right
     a
       color: #666
+
+.fade-enter
+  opacity: 0;
+  transform:   translate(-250px,0);
+  transform: translate3d(-250px,0,0);
+  &.fade-enter-active
+    opacity: 1;
+    transform: translate(0,0);
+    transform: translate3d(0,0,0);
+    transition-property: transform, opacity;
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
+
+.question-enter
+  opacity: 0;
+  transform:   translate(0,0,0);
+  transform: translate3d(0,0,1.5);
+  transition-property: transform, opacity;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
+  &.question-enter-active
+    opacity: 1;
+    transform:   translate(0,100px);
+    transform: translate3d(0,100px,0);
+
+// .sample-enter {
+//      -webkit-transition: 1s ease-in;
+// }
+// .sample-enter.sample-enter-active {
+//     font-size: 80px;
+// }
+// .sample-leave {
+//     -webkit-transition: .5s ease-out;
+// }
+// .sample-leave.sample-leave-active {
+//     font-size: 10px;
+// }

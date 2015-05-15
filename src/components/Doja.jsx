@@ -39,6 +39,7 @@ var qustionsStore = [
 ]
 var mockAnswerdQuestion = [
   {
+    "id": 3,
     "question": "年収どのぐらい？",
     "querist": {
       hat: "美容師 19歳 女性",
@@ -47,6 +48,7 @@ var mockAnswerdQuestion = [
     "answer": "平均よりもらってる"
   },
   {
+    "id": 4,
     "question": "シゴトで使ってる言語って何？",
     "querist": {
       hat: "IT企業勤務 28歳 男性",
@@ -94,7 +96,7 @@ class AnswerForm{
           <textarea ref="answerText"></textarea>
         </div>
           <div className="doyakun" onClick={this.sendAnswer.bind(this)}>
-            <img src="./images/doyakun.png"/>
+            <img src="./assets/doyakun.png"/>
             <div className="answer-text">
               こたえる
             </div>
@@ -119,17 +121,23 @@ class QACard extends React.Component{
 
 class AnswerCard extends React.Component{
   render(){
-    const {question, querist} = this.props
-    return <div className="qa-card card-answer">
-      <Question question={question} querist={querist} />
-      <AnswerForm {...this.props} />
-    </div>
+    const {question, querist, id} = this.props
+    return (
+      <div className="qa-card card-answer" key={id} >
+        <Question question={question} querist={querist} />
+        <AnswerForm {...this.props} />
+      </div>
+    )
   }
 }
 class QACardList extends React.Component{
   render(){
     var cards = this.props.answerdQuestion.map((qa, i) => {
-      return <QACard {...qa} key={i} />
+      return (
+        <ReactCSSTransitionGroup transitionName="question" >
+          <QACard {...qa} key={i} />
+        </ReactCSSTransitionGroup>
+      )
     })
     return <div>
       {cards}
@@ -167,10 +175,12 @@ export class Doja extends React.Component{
     return (
       <div className="page-doja">
         <UserHeader user={mockUser}></UserHeader>
-        <AnswerCard {...qs} key={qs.id}
-          onAnswer={this.onAnswer.bind(this)}
-          onAnswerSkip={this.onAnswerSkip.bind(this)}
-        />
+        <ReactCSSTransitionGroup transitionName="fade" transitionLeave={false}>
+          <AnswerCard {...qs} key={qs.id}
+            onAnswer={this.onAnswer.bind(this)}
+            onAnswerSkip={this.onAnswerSkip.bind(this)}
+          />
+        </ReactCSSTransitionGroup>
         <QACardList answerdQuestion={this.state.answerd}/>
       </div>
     )
